@@ -58,7 +58,7 @@ Here are a few ideas how to go around it:
 * Find out how to disable same-origin policy in your browser (to start with, see [this blog post](https://alfilatov.com/posts/run-chrome-without-cors/) or [this StackOverflow thread](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)).
 * Install a program that will emulate a local server on your device, such as `live-server`(https://www.npmjs.com/package/live-server).
 * Move your CSV files to a remote location on the web (such as GitHub Gist, AWS S3, or a Wordpress site),
-and in `script.js`, change `d3.csv('data.csv')` to `d3.csv('https://wherever.your/file/is/data.csv')`.
+and in `script.js`, change `$.get('./data.csv', function(csvString) {` to `$.get('https://wherever.your/file/is/data.csv', function(csvString) {`.
 * Do all the development (file modifications) within GitHub without downloading this repository, using either GitHub's web interface, or GitHub Desktop application.
 
 ## See other chart templates
