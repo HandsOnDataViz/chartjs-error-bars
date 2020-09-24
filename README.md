@@ -22,14 +22,19 @@ Can be either **stacked** (if `STACKED` is set to `true`) or unstacked (regular)
 In `script.js`, you can customize the values of variables shown in the code snippet below. For more customization, see [Chart.js documentation](https://www.chartjs.org/docs/latest/).
 
 ```javascript
-  var HORIZONTAL = false;   // `false` for vertical (column) chart, `true` for horizontal bar
-  var STACKED = false;  // `false` for individual bars, `true` for stacked bars
-
   var TITLE = 'Household Income for Select US Geographies, 2018';
 
-  var LABELS = 'geo';  // Column to define 'bucket' names (x axis)
+  // `false` for vertical (column) chart, `true` for horizontal bar
+  var HORIZONTAL = false;
 
-  var SERIES = [  // For each column representing a series, define its name and color
+  // `false` for individual bars, `true` for stacked bars
+  var STACKED = false;  
+
+  // Which column defines "bucket" names?
+  var LABELS = 'geo';
+
+  // For each column representing a series, define its name and color
+  var SERIES = [
     {
       column: 'median',
       name: 'Median Income',
@@ -44,11 +49,17 @@ In `script.js`, you can customize the values of variables shown in the code snip
     }
   ];
 
-  var X_AXIS = 'Geography';  // x-axis label and label in tooltip
-  var Y_AXIS = 'US Dollars'; // y-axis label and label in tooltip
+  // x-axis label and label in tooltip
+  var X_AXIS = 'Geography'; 
+  
+  // y-axis label and label in tooltip
+  var Y_AXIS = 'US Dollars';
 
-  var SHOW_GRID = true; // `true` to show the grid, `false` to hide
-  var SHOW_LEGEND = true; // `true` to show the legend, `false` to hide
+  // `true` to show the grid, `false` to hide
+  var SHOW_GRID = true;
+
+  // `true` to show the legend, `false` to hide
+  var SHOW_LEGEND = true;
 ```
 
 ## Why am I not seeing my chart when I open `index.html` in the browser?

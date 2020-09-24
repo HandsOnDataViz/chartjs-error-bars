@@ -1,13 +1,18 @@
 $(document).ready(function() {
 
-  var HORIZONTAL = false;   // `false` for vertical (column) chart, `true` for horizontal bar
-  var STACKED = false;  // `false` for individual bars, `true` for stacked bars
-
   var TITLE = 'Household Income for Select US Geographies, 2018';
 
-  var LABELS = 'geo';  // Column to define 'bucket' names (x axis)
+  // `false` for vertical (column) chart, `true` for horizontal bar
+  var HORIZONTAL = false;
 
-  var SERIES = [  // For each column representing a series, define its name and color
+  // `false` for individual bars, `true` for stacked bars
+  var STACKED = false;  
+
+  // Which column defines "bucket" names?
+  var LABELS = 'geo';
+
+  // For each column representing a series, define its name and color
+  var SERIES = [
     {
       column: 'median',
       name: 'Median Income',
@@ -22,11 +27,17 @@ $(document).ready(function() {
     }
   ];
 
-  var X_AXIS = 'Geography';  // x-axis label and label in tooltip
-  var Y_AXIS = 'US Dollars'; // y-axis label and label in tooltip
+  // x-axis label and label in tooltip
+  var X_AXIS = 'Geography'; 
+  
+  // y-axis label and label in tooltip
+  var Y_AXIS = 'US Dollars';
 
-  var SHOW_GRID = true; // `true` to show the grid, `false` to hide
-  var SHOW_LEGEND = true; // `true` to show the legend, `false` to hide
+  // `true` to show the grid, `false` to hide
+  var SHOW_GRID = true;
+
+  // `true` to show the legend, `false` to hide
+  var SHOW_LEGEND = true;
 
   // Read data file and create a chart
   $.get('./data.csv', function(csvString) {
